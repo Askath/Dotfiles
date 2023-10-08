@@ -6,7 +6,6 @@ export JAVA_HOME="/opt/homebrew/opt/openjdk@17"
 export USERNAME=taradruffel
 
 
-source <(ng completion script)
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
