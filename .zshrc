@@ -1,6 +1,13 @@
 
 export PATH=/Users/taradruffel/nvim/bin:$PATH
 
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+export JAVA_HOME="/opt/homebrew/opt/openjdk@17"
+export USERNAME=taradruffel
+
+
+source <(ng completion script)
+
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
