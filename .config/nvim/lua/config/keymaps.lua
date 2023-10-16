@@ -11,4 +11,5 @@ vim.keymap.del("n", "<leader><tab>f")
 
 vim.keymap.set("n", "<leader>W", "<cmd>w!<CR>", { desc = "Save" })
 vim.keymap.set("n", "<leader>gf", "<cmd>Git<CR>", { desc = "Fugitiv" })
+vim.keymap.set("n", "<leader>gF", "<cmd>set foldmethod=syntax<CR>zM", { desc = "Fold Diff" })
 vim.keymap.set("n", "<leader>wz", "<cmd>ZenMode<CR>", { desc = "Zen Mode" })

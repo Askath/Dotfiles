@@ -4,6 +4,7 @@ return {
     opts = {
       servers = {
         angularls = {
+          file_types = { "typescript", "typescriptreact", "html", "typescript.tsx" },
           root_dir = require("lspconfig.util").root_pattern("angular.json", "project.json"),
         },
         elixirls = {
@@ -14,6 +15,35 @@ return {
           root_dir = require("lspconfig.util").root_pattern("mix.exs", ".git"),
         },
       },
+    },
+  },
+  {
+    "elixir-tools/elixir-tools.nvim",
+    version = "*",
+    event = { "BufReadPre", "BufNewFile" },
+    config = function()
+      local elixir = require("elixir")
+      local elixirls = require("elixir.elixirls")
+
+      elixir.setup({
+        nextls = { enable = false },
+        credo = { enable = true },
+        elixirls = {
+          enable = true,
+          settings = elixirls.settings({
+            dialyzerEnabled = true,
+            enableTestLenses = false,
+          }),
+          on_attach = function(client, bufnr)
+            vim.keymap.set("n", "<space>fp", ":ElixirFromPipe<cr>", { buffer = true, noremap = true })
+            vim.keymap.set("n", "<space>tp", ":ElixirToPipe<cr>", { buffer = true, noremap = true })
+            vim.keymap.set("v", "<space>em", ":ElixirExpandMacro<cr>", { buffer = true, noremap = true })
+          end,
+        },
+      })
+    end,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
     },
   },
 }
