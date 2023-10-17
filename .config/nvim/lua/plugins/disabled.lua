@@ -1,3 +1,4 @@
+-- Built in Plugins that are disabled
 return {
   {
     "rcarriga/nvim-notify",
