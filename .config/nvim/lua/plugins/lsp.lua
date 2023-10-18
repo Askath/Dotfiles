@@ -26,13 +26,22 @@ return {
       local elixirls = require("elixir.elixirls")
 
       elixir.setup({
-        nextls = { enable = false },
-        credo = { enable = true },
+        nextls = {
+          enable = false, -- defaults to false
+        },
+        credo = {
+          enable = true, -- defaults to true
+        },
         elixirls = {
-          enable = true,
+          -- specify a repository and branch
+          -- repo = "mhanberg/elixir-ls", -- defaults to elixir-lsp/elixir-ls
+
+          -- default settings, use the `settings` function to override settings
           settings = elixirls.settings({
             dialyzerEnabled = true,
+            fetchDeps = false,
             enableTestLenses = false,
+            suggestSpecs = false,
           }),
           on_attach = function(client, bufnr)
             vim.keymap.set("n", "<space>fp", ":ElixirFromPipe<cr>", { buffer = true, noremap = true })
