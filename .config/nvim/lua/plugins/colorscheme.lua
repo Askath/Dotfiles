@@ -1,6 +1,7 @@
 return {
   { "rktjmp/lush.nvim" },
   { "Askath/clear-jellybeans-nvim" },
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   {
     "projekt0n/github-nvim-theme",
     lazy = false, -- make sure we load this during startup if it is your main colorscheme
@@ -12,7 +13,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "github_light",
+      colorscheme = "catppuccin",
     },
   },
 }

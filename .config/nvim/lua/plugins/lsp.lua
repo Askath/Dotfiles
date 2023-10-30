@@ -14,6 +14,9 @@ return {
           filetypes = { "elixir", "eelixir", "exs", "ex" },
           root_dir = require("lspconfig.util").root_pattern("mix.exs", ".git"),
         },
+        tailwindcss = {
+          file_types = { "heex" },
+        },
       },
     },
   },
@@ -27,7 +30,7 @@ return {
 
       elixir.setup({
         nextls = {
-          enable = false, -- defaults to false
+          enable = true, -- defaults to false
         },
         credo = {
           enable = true, -- defaults to true
