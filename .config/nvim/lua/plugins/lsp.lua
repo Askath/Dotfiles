@@ -1,22 +1,24 @@
 return {
-  {
-    "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
-        angularls = {
-          file_types = { "typescript", "typescriptreact", "html", "typescript.tsx" },
-          root_dir = require("lspconfig.util").root_pattern("angular.json", "project.json"),
-        },
-        elixirls = {
-          dialyzerEnabled = true,
-          autoBuild = true,
-          cmd = { "elixir-ls" },
-          filetypes = { "elixir", "eelixir", "exs", "ex" },
-          root_dir = require("lspconfig.util").root_pattern("mix.exs", ".git"),
-        },
-        gdscript = {
-          filetypes = { "gd", "gdscript", "gdscript3" },
-          root_dir = require("lspconfig.util").root_pattern("project.godot", ".git"),
+
+  "neovim/nvim-lspconfig",
+  opts = {
+    servers = {
+      angularls = {
+        file_types = { "typescript", "typescriptreact", "html", "typescript.tsx" },
+        root_dir = require("lspconfig.util").root_pattern("angular.json", "project.json"),
+      },
+      elixirls = {
+        dialyzerEnabled = true,
+        autoBuild = true,
+        cmd = { "elixir-ls" },
+        filetypes = { "elixir", "eelixir", "exs", "ex" },
+        root_dir = require("lspconfig.util").root_pattern("mix.exs", ".git"),
+      },
+      gdscript = {
+        filetypes = { "gd", "gdscript", "gdscript3" },
+        root_dir = require("lspconfig.util").root_pattern("project.godot", ".git"),
+        tailwindcss = {
+          file_types = { "heex" },
         },
       },
     },
