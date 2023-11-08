@@ -1,21 +1,12 @@
 
 * Todos
-  - ( ) Isa ansprechen wegen Design Termin absprache 
+  - (x) Isa ansprechen wegen Design Termin absprache 
   - ( ) Aufraumen 
-  - ( ) Alten Laptop von der OD kaufen
-
-* Meetings
-*** one on one
-    - Tech lead
-    - Pro version Figma 
 
 * To learn
   - artefactory
-  - component driven development
   - storybook
   - directives
-  - NX
-  - firebase
   - Ziel selbststaendig
 
   {https://frontendmasters.com/workshops/enterprise-cloud/} 
@@ -23,27 +14,4 @@
   {https://frontendmasters.com/courses/enterprise-ui-dev/} 
   {https://frontendmasters.com/courses/dev-tools/} 
   {https://frontendmasters.com/courses/freelancing/} 
-
-
-- PDL
-      - Schreibtisch
-      - Klientenmappe
-            - Klientenstammblatt
-            - Anamnese
-                  - Biografiebogen
-                  - SIS Ambulant
-                  - Medikationsplan
-            - Berichte
-                  - Berichteblatt
-                  - ärztliche Kommunikation
-                  - Vitalwerte
-      - Personalplanung
-            - Mitarbeiterstammblatt
-      - Organisation
-            - Organisationseinheiten
-            - Rollen und Rechte
-            - Tageszeiten
-            - Ärzte
-
-  {:Functional Angular:}
 

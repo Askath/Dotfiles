@@ -14,6 +14,10 @@ return {
           filetypes = { "elixir", "eelixir", "exs", "ex" },
           root_dir = require("lspconfig.util").root_pattern("mix.exs", ".git"),
         },
+        gdscript = {
+          filetypes = { "gd", "gdscript", "gdscript3" },
+          root_dir = require("lspconfig.util").root_pattern("project.godot", ".git"),
+        },
       },
     },
   },
@@ -27,7 +31,7 @@ return {
 
       elixir.setup({
         nextls = {
-          enable = false, -- defaults to false
+          enable = true, -- defaults to false
         },
         credo = {
           enable = true, -- defaults to true
