@@ -3,6 +3,7 @@ return {
     {
         "neovim/nvim-lspconfig",
         opts = {
+            inline_hints = { enabled = true },
             servers = {
                 angularls = {
                     file_types = {
@@ -32,6 +33,20 @@ return {
                         "project.godot",
                         ".git"
                     ),
+                },
+                tsserver = {
+                    init_options = {
+                        preferences = {
+                            includeInlayParameterNameHints = "all",
+                            includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+                            includeInlayFunctionParameterTypeHints = true,
+                            includeInlayVariableTypeHints = true,
+                            includeInlayPropertyDeclarationTypeHints = true,
+                            includeInlayFunctionLikeReturnTypeHints = true,
+                            includeInlayEnumMemberValueHints = true,
+                            importModuleSpecifierPreference = "non-relative",
+                        },
+                    },
                 },
             },
         },
