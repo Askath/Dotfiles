@@ -10,7 +10,6 @@ eval "$(zoxide init zsh)"
 
 alias ls="exa -al"
 alias cat=bat
-alias n=nvim
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
