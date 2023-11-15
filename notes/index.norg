@@ -1,3 +1,6 @@
+* Bjorn
+  - Gehaltsanpassung auf 4500. Mindestens 4200
+  - Kurs Design/Ux
 
 * To learn
   - artefactory
@@ -11,3 +14,19 @@
   {https://frontendmasters.com/courses/dev-tools/} 
   {https://frontendmasters.com/courses/freelancing/} 
 
+* Backend starten:
+phoenix-core updaten
+maven reload projects durchführen (im VPN)
+mvn test-compile
+mvn clean verify
+docker start
+Anwendung starten
+
+ODER wenn Projekt aktuell und maven reload durchgeführt
+ 
+docker start (über database Modul in maven, nicht persistency)
+liquibase update (ebenfalls über database)
+test compile
+Anwendung starten
+
+Marcel sagte mir auch noch, dass bei Fehlern bzgl. fehlenden Mappern ein "clean compile" hilft
