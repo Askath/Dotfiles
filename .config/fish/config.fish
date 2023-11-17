@@ -10,9 +10,13 @@ set -x USERNAME taradruffel
 
 starship init fish | source
 zoxide init fish | source
+source /opt/homebrew/opt/asdf/libexec/asdf.fish
 
 alias ls="exa -al"
 alias cat='bat'
 alias n='nvim'
 # ~/.tmux/plugins
 #
+
+alias gd='godot'
+alias gde='godot -e'
