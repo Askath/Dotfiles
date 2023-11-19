@@ -20,3 +20,5 @@ alias n='nvim'
 
 alias gd='godot'
 alias gde='godot -e'
+
+set -g fish_escape_delay_ms 10
