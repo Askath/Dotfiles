@@ -5,6 +5,11 @@ set -x PATH /opt/homebrew/bin $PATH
 set PATH /Users/tarardruffel/.tmux/plugins/t-smart-tmux-session-manager/bin $PATH
 
 
+set PATH /opt/homebrew/opt/openjdk@17/bin $PATH
+set -x JAVA_HOME /opt/homebrew/opt/openjdk@17
+set -x USERNAME taradruffel
+set -x LLVM_PATH /opt/homebrew/opt/llvm/bin
+
 starship init fish | source
 zoxide init fish | source
 source /opt/homebrew/opt/asdf/libexec/asdf.fish
