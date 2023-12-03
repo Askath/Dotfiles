@@ -43,3 +43,6 @@ set -x JAVA_HOME /opt/homebrew/opt/openjdk@17
 set -x USERNAME taradruffel
 set -x isProduction false
 set -x FZF_COMPLETION_TRIGGER '**'
+
+bind \cf t
+bind \ef rgf
