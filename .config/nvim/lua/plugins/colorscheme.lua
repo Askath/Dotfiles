@@ -1,5 +1,11 @@
 return {
     {
+        "rktjmp/lush.nvim",
+    },
+    {
+        "mcchrish/zenbones.nvim",
+    },
+    {
         "craftzdog/solarized-osaka.nvim",
         lazy = false,
         priority = 1000,
@@ -11,10 +17,9 @@ return {
         },
     },
     {
-
         "LazyVim/LazyVim",
         opts = {
-            colorscheme = "solarized-osaka",
+            colorscheme = "neobones",
         },
     },
 }

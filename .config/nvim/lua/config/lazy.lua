@@ -15,7 +15,7 @@ require("lazy").setup({
         { import = "lazyvim.plugins.extras.lang.rust" },
         { import = "lazyvim.plugins.extras.util.project" },
         { import = "lazyvim.plugins.extras.ui.mini-animate" },
-        { import = "lazyvim.plugins.extras.coding.copilot" },
+        -- { import = "lazyvim.plugins.extras.coding.copilot" },
         { import = "lazyvim.plugins.extras.linting.eslint" },
         { import = "lazyvim.plugins.extras.editor.leap" },
         -- import/override with your plugins
