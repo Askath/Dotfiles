@@ -42,3 +42,4 @@ set PATH /opt/homebrew/opt/openjdk@17/bin $PATH
 set -x JAVA_HOME /opt/homebrew/opt/openjdk@17
 set -x USERNAME taradruffel
 set -x isProduction false
+set -x FZF_COMPLETION_TRIGGER '**'

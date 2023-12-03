@@ -5,5 +5,3 @@
 -- disable tabs
 vim.o.showtabline = 0
 vim.opt.background = "dark"
-
-vim.g.hardtime_default_on = 0
