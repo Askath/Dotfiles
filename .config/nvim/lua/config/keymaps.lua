@@ -11,9 +11,6 @@ vim.keymap.del("n", "<leader><tab>d")
 vim.keymap.del("n", "<leader><tab>[")
 vim.keymap.del("n", "<leader><tab>f")
 
--- Save File
-vim.keymap.set("n", "<leader>W", "<cmd>w!<CR>", { desc = "Save" })
-
 -- open fugitive
 vim.keymap.set("n", "<leader>gf", "<cmd>Git<CR>", { desc = "Fugitiv" })
 

@@ -48,6 +48,9 @@ return {
                         },
                     },
                 },
+                html = {
+                    file_types = { "html" },
+                },
             },
         },
     },
