@@ -37,6 +37,7 @@ set -x EXCHANGE_USER_UUID 01234567-0123-0123-0123-0123456789ab
 
 #work setting
 set PATH /opt/homebrew/opt/openjdk@17/bin $PATH
+set PATH /Users/taradruffel/lombok $PATH
 set -x JAVA_HOME /opt/homebrew/opt/openjdk@17
 set -x USERNAME taradruffel
 set -x isProduction false
