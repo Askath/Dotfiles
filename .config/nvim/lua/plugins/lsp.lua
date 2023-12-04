@@ -49,7 +49,7 @@ return {
                     },
                 },
                 html = {
-                    file_types = { "html" },
+                    file_types = { "html", "xhtml" },
                 },
             },
         },
