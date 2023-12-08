@@ -48,6 +48,9 @@ return {
                         },
                     },
                 },
+                docker = {
+                    file_types = { "Dockerfile" },
+                },
                 html = {
                     file_types = { "html", "xhtml" },
                 },
