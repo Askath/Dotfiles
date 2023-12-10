@@ -1,5 +1,4 @@
 return {
-    { "lvimuser/lsp-inlayhints.nvim" },
     {
         "neovim/nvim-lspconfig",
         opts = {
@@ -48,14 +47,34 @@ return {
                         },
                     },
                 },
-                docker = {
-                    file_types = { "Dockerfile" },
-                },
-                html = {
-                    file_types = { "html", "xhtml" },
+                astro = {
+                    file_types = { "astro" },
                 },
             },
         },
+        init = function()
+            local keys = require("lazyvim.plugins.lsp.keymaps").get()
+            keys[#keys + 1] = {
+                "gd",
+                "<CMD>lua require('fzf-lua').lsp_definitions({ jump_to_single_result = true })<cr>",
+                "Jump to Definiton",
+            }
+            keys[#keys + 1] = {
+                "gr",
+                "<CMD>FzfLua lsp_references<cr>",
+                "references",
+            }
+            keys[#keys + 1] = {
+                "<leader>ss",
+                "<CMD>FzfLua lsp_document_symbols<cr>",
+                "Document Symbols",
+            }
+            keys[#keys + 1] = {
+                "<leader>ca",
+                "<CMD>lua require('fzf-lua').lsp_code_actions({ sync = true })<cr>",
+                "Code Actions",
+            }
+        end,
     },
     { "habamax/vim-godot" },
     {

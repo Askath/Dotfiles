@@ -2,24 +2,11 @@ return {
     {
         "rktjmp/lush.nvim",
     },
-    {
-        "mcchrish/zenbones.nvim",
-    },
-    {
-        "craftzdog/solarized-osaka.nvim",
-        lazy = false,
-        priority = 1000,
-        opts = {
-            transparent = true,
-            on_highlights = function(hightlights, colors)
-                hightlights.LspInlayHint = { bg = nil, fg = colors.base01 }
-            end,
-        },
-    },
+    { "mcchrish/zenbones.nvim" }, -- lazy,
     {
         "LazyVim/LazyVim",
         opts = {
-            colorscheme = "neobones",
+            colorscheme = "tokyobones",
         },
     },
 }
