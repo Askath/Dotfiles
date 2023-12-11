@@ -1,4 +1,6 @@
 return {
+    { "catppuccin/nvim", as = "catppuccin" },
+    { "dasupradyumna/midnight.nvim", lazy = false, priority = 1000 },
     {
         "rktjmp/lush.nvim",
     },
@@ -6,7 +8,7 @@ return {
     {
         "LazyVim/LazyVim",
         opts = {
-            colorscheme = "tokyobones",
+            colorscheme = "catppuccin-mocha",
         },
     },
 }

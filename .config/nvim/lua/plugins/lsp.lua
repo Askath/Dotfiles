@@ -1,4 +1,6 @@
 return {
+
+    "NeogitOrg/neogit",
     {
         "neovim/nvim-lspconfig",
         opts = {
