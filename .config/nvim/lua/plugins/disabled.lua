@@ -17,6 +17,9 @@ return {
     { "nvim-pack/nvim-spectre", enabled = false },
     {
         "nvim-telescope/telescope.nvim",
-        enabled = false,
+        enabled = true,
+        keys = function()
+            return {}
+        end,
     },
 }
