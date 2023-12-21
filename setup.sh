@@ -1,1 +1,1 @@
-brew install starship fish fzf bat exa fd rigprep lazydocker mycli node zoxide spotify-tui tmux glow
+brew install  fish fzf bat exa fd rigprep  node zoxide tmux glow
