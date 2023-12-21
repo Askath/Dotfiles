@@ -1,4 +1,5 @@
 set PATH /Users/taradruffel/nvim/bin $PATH
+set PATH /Users/taradruffel/spt $PATH
 set PATH /Users/taradruffel/.cargo/bin $PATH
 set -x PATH /opt/homebrew/bin $PATH
 set PATH /Users/tarardruffel/.tmux/plugins/t-smart-tmux-session-manager/bin $PATH
@@ -10,7 +11,9 @@ set -x USERNAME taradruffel
 set -x OPENAI_API_KEY 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
 set -x LLVM_PATH /opt/homebrew/opt/llvm/bin
 
+starship init fish | source
 zoxide init fish | source
+source /opt/homebrew/opt/asdf/libexec/asdf.fish
 
 alias ls="exa -al"
 alias cat='bat'
