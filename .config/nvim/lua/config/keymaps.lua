@@ -13,5 +13,6 @@ vim.keymap.del("n", "<leader><tab>[")
 vim.keymap.del("n", "<leader><tab>f")
 
 vim.keymap.set("n", "<c-q>", ":q!<cr>")
+vim.keymap.set("n", "<leader>D", ":DBUIToggle<cr>")
 vim.keymap.set("n", "<leader>Md", ":delm QWFP <bar> :wshada!<cr>")
 vim.keymap.set("n", "<leader>C", "<cmd>ChatGPT<cr>")

@@ -9,7 +9,7 @@ set PATH /Users/tarardruffel/.tmux/plugins/t-smart-tmux-session-manager/bin $PAT
 set PATH /opt/homebrew/opt/openjdk@17/bin $PATH
 set -x JAVA_HOME /opt/homebrew/opt/openjdk@17
 set -x USERNAME taradruffel
-set -x OPENAI_API_KEY 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
+set -x OPENAI_API_KEY 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
 set -x LLVM_PATH /opt/homebrew/opt/llvm/bin
 
 zoxide init fish | source
@@ -47,6 +47,7 @@ set -x JAVA_HOME /opt/homebrew/opt/openjdk@17
 set -x USERNAME taradruffel
 set -x isProduction false
 set -x FZF_COMPLETION_TRIGGER '**'
+set -x NODE_EXTRA_CA_CERTS /Users/taradruffel/Developer/java/phoenix-api/optadata-gruppe-ODA-DC1-CA.crt
 
 bind \cf t
 bind \ef rgf
