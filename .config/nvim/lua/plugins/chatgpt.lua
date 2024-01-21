@@ -152,7 +152,7 @@ return {
                     },
                 },
                 openai_params = {
-                    model = "gpt-4-1106-preview",
+                    model = "gpt-3.5-turbo-1106",
                     frequency_penalty = 0,
                     presence_penalty = 0,
                     temperature = 0,
@@ -161,7 +161,7 @@ return {
                     n = 1,
                 },
                 openai_edit_params = {
-                    model = "gpt-4-1106-preview",
+                    model = "gpt-3.5-turbo-1106",
                     frequency_penalty = 0,
                     presence_penalty = 0,
                     temperature = 0,

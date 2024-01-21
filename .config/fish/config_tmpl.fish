@@ -9,7 +9,7 @@ set PATH /Users/tarardruffel/.tmux/plugins/t-smart-tmux-session-manager/bin $PAT
 set PATH /opt/homebrew/opt/openjdk@17/bin $PATH
 set -x JAVA_HOME /opt/homebrew/opt/openjdk@17
 set -x USERNAME taradruffel
-set -x OPENAI_API_KEY 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
+set -x OPENAI_API_KEY "op://Private/OpenAPI nvim/credential"
 set -x LLVM_PATH /opt/homebrew/opt/llvm/bin
 
 zoxide init fish | source
