@@ -47,6 +47,7 @@ set -x JAVA_HOME /opt/homebrew/opt/openjdk@17
 set -x USERNAME taradruffel
 set -x isProduction false
 set -x FZF_COMPLETION_TRIGGER '**'
+set -x NODE_EXTRA_CA_CERTS /Users/taradruffel/Developer/java/phoenix-api/optadata-gruppe-ODA-DC1-CA.crt
 
 bind \cf t
 bind \ef rgf
