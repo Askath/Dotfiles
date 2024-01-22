@@ -13,5 +13,6 @@ return {
                 help = true,
             },
         },
+        enabled = false,
     },
 }
