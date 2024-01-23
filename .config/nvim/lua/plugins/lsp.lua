@@ -3,21 +3,10 @@ return {
     "NeogitOrg/neogit",
     {
         "neovim/nvim-lspconfig",
+        priority = 1000,
         opts = {
             inline_hints = { enabled = true },
             servers = {
-                angularls = {
-                    file_types = {
-                        "typescript",
-                        "typescriptreact",
-                        "html",
-                        "typescript.tsx",
-                    },
-                    root_dir = require("lspconfig.util").root_pattern(
-                        "angular.json",
-                        "project.json"
-                    ),
-                },
                 elixirls = {
                     dialyzerEnabled = true,
                     autoBuild = true,
@@ -36,6 +25,7 @@ return {
                     ),
                 },
                 tsserver = {
+                    autostart = true,
                     init_options = {
                         preferences = {
                             includeInlayParameterNameHints = "all",
@@ -48,6 +38,13 @@ return {
                             importModuleSpecifierPreference = "non-relative",
                         },
                     },
+                },
+                angularls = {
+                    autostart = true,
+                    root_dir = require("lspconfig.util").root_pattern(
+                        "angular.json",
+                        "project.json"
+                    ),
                 },
                 astro = {
                     file_types = { "astro" },
@@ -130,6 +127,16 @@ return {
         end,
         dependencies = {
             "nvim-lua/plenary.nvim",
+        },
+    },
+    {
+        "williamboman/mason-lspconfig.nvim",
+        opts = {
+
+            priorities = {
+                tsserver = 10,
+                angularls = 5,
+            },
         },
     },
 }

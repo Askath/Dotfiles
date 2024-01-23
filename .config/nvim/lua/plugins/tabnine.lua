@@ -10,7 +10,6 @@ return {
                 debounce_ms = 800,
                 suggestion_color = { gui = "#808080", cterm = 244 },
                 exclude_filetypes = { "TelescopePrompt", "NvimTree" },
-                log_file_path = "/Users/taradruffel/test.log", -- absolute path to Tabnine log file
             })
         end,
     },

@@ -22,3 +22,10 @@ vim.keymap.set("n", "<leader>tc", "<cmd>TabnineChatClose<cr>")
 vim.keymap.set("n", "<leader>te", "<cmd>TabnineExplain<cr>")
 vim.keymap.set("n", "<leader>tf", "<cmd>TabnineFix<cr>")
 vim.keymap.set("n", "<leader>tt", "<cmd>TabnineTest<cr>")
+
+vim.keymap.set(
+    "n",
+    "<leader>tq",
+    "",
+    { noremap = true, callback = require("tabnine.chat").explain }
+)
