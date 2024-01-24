@@ -2,11 +2,32 @@ return {
 
     "NeogitOrg/neogit",
     {
+        "williamboman/mason-lspconfig.nvim",
+        opts = {
+            priorities = {
+                tsserver = 10000,
+                angularls = 5,
+            },
+        },
+    },
+    {
         "neovim/nvim-lspconfig",
-        priority = 1000,
         opts = {
             inline_hints = { enabled = true },
             servers = {
+                jdtls = {
+                    cmd = {
+                        "jdtls",
+                        "--jvm-arg="
+                            .. string.format(
+                                "-javaagent:%s",
+                                vim.fn.expand(
+                                    "//Users/taradruffel/.local/share/nvim/mason/share/jdtls/lombok.jar"
+                                )
+                            ),
+                    },
+                    filetypes = { "java" },
+                },
                 elixirls = {
                     dialyzerEnabled = true,
                     autoBuild = true,
@@ -41,6 +62,10 @@ return {
                 },
                 angularls = {
                     autostart = true,
+                    filetypes = {
+                        "html",
+                        "htm",
+                    },
                     root_dir = require("lspconfig.util").root_pattern(
                         "angular.json",
                         "project.json"
@@ -127,16 +152,6 @@ return {
         end,
         dependencies = {
             "nvim-lua/plenary.nvim",
-        },
-    },
-    {
-        "williamboman/mason-lspconfig.nvim",
-        opts = {
-
-            priorities = {
-                tsserver = 10,
-                angularls = 5,
-            },
         },
     },
 }
