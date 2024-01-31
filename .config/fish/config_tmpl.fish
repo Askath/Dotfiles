@@ -49,5 +49,7 @@ set -x isProduction false
 set -x FZF_COMPLETION_TRIGGER '**'
 set -x NODE_EXTRA_CA_CERTS /Users/taradruffel/Developer/java/phoenix-api/optadata-gruppe-ODA-DC1-CA.crt
 
+#tooling
 bind \cf t
 bind \ef rgf
+bind \ev ~/scripts/opsearch.sh
