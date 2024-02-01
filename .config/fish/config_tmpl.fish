@@ -53,3 +53,4 @@ set -x NODE_EXTRA_CA_CERTS /Users/taradruffel/Developer/java/phoenix-api/optadat
 bind \cf t
 bind \ef rgf
 bind \ev ~/scripts/opsearch.sh
+bind \er 'glow ~/knowledge_base/'

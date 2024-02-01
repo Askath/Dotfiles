@@ -65,6 +65,7 @@ return {
                     filetypes = {
                         "html",
                         "htm",
+                        "typescript",
                     },
                     root_dir = require("lspconfig.util").root_pattern(
                         "angular.json",
