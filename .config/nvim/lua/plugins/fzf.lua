@@ -7,7 +7,11 @@ return {
         dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
             -- calling `setup` is optional for customization
-            require("fzf-lua").setup({})
+            require("fzf-lua").setup({
+                files = {
+                    path_shorten = 1, -- 'true' or number, shorten path?
+                },
+            })
         end,
         keys = {
             {
@@ -15,6 +19,7 @@ return {
                 "<cmd>FzfLua git_files<cr>",
                 desc = "Find files",
             },
+
             {
                 "<leader>f",
                 "<cmd>FzfLua files<cr>",

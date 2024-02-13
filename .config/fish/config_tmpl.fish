@@ -25,33 +25,45 @@ alias w='watson'
 alias gd='godot'
 alias gde='godot -e'
 
-set PATH /Users/taradruffel/scripts $PATH
+# brew install caarlos0/tap/timer
+# brew install terminal-notifier
+alias work="timer 60m && terminal-notifier -message 'Pomodoro'\
+        -title 'Work Timer is up! Take a Break 😊'\
+        -appIcon '~/Pictures/pumpkin.png'\
+        -sound Crystal"
 
+alias rest="timer 10m && terminal-notifier -message 'Pomodoro'\
+        -title 'Break is over! Get back to work 😬'\
+        -appIcon '~/Pictures/pumpkin.png'\
+        -sound Crystal"
+
+set PATH /Users/taradruffel/scripts $PATH
 
 set -g fish_escape_delay_ms 10
 
 # Liquibase settings
-set -x DB_HOST 127.0.0.1
-set -x DB_PORT 3306
-set -x DB_SOURCE phoenix-database
-set -x DB_USER blackend
-set -x DB_PASSWORD blackend
-set -x KEYCLOAK_ISSUER_URI https://login.integration.entwickler.one/auth/realms/one
-set -x EXCHANGE_USER_UUID 01234567-0123-0123-0123-0123456789ab
+# set -x DB_HOST 127.0.0.1
+# set -x DB_PORT 3306
+# set -x DB_SOURCE phoenix-database
+# set -x DB_USER blackend
+# set -x DB_PASSWORD blackend
+# set -x KEYCLOAK_ISSUER_URI https://login.integration.entwickler.one/auth/realms/one
+# set -x EXCHANGE_USER_UUID 01234567-0123-0123-0123-0123456789ab
 
 
-#work setting
-set PATH /opt/homebrew/opt/openjdk@17/bin $PATH
-set PATH /Users/taradruffel/lombok $PATH
-set -x JAVA_HOME /opt/homebrew/opt/openjdk@17
-set -x USERNAME taradruffel
-set -x isProduction false
-set -x FZF_COMPLETION_TRIGGER '**'
-set -x NODE_EXTRA_CA_CERTS /Users/taradruffel/Developer/java/phoenix-api/optadata-gruppe-ODA-DC1-CA.crt
+# #work setting
+# set PATH /opt/homebrew/opt/openjdk@17/bin $PATH
+# set PATH /Users/taradruffel/lombok $PATH
+# set -x JAVA_HOME /opt/homebrew/opt/openjdk@17
+# set -x USERNAME taradruffel
+# set -x isProduction false
+# set -x FZF_COMPLETION_TRIGGER '**'
+# set -x NODE_EXTRA_CA_CERTS /Users/taradruffel/Developer/java/phoenix-api/optadata-gruppe-ODA-DC1-CA.crt
 set -x EDITOR nvim
 
 #tooling
 bind \cf t
 bind \ef rgf
 bind \ev ~/scripts/opsearch.sh
-bind \er 'glow ~/knowledge_base/'
+# brew install glow
+bind \er 'glow ~/notes/'
