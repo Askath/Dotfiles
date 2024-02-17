@@ -1,5 +1,5 @@
 return {
-    { "askath/vim-dadbod-mariadb" },
+    { "tpope/vim-dadbod" },
     {
         "kristijanhusak/vim-dadbod-ui",
         dependencies = {
@@ -20,5 +20,8 @@ return {
             -- Your DBUI configuration
             vim.g.db_ui_use_nerd_fonts = 1
         end,
+    },
+    {
+        "kristijanhusak/vim-dadbod-completion",
     },
 }

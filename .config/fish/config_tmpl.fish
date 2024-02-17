@@ -59,10 +59,9 @@ set PATH /Users/tarardruffel/.tmux/plugins/t-smart-tmux-session-manager/bin $PAT
 set PATH /opt/homebrew/opt/openjdk@17/bin $PATH
 
 #my Tools
-bind \et t
+bind \et 'sesh connect $(sesh list | fzf)'
 bind \ef rgf
 bind \ep ~/scripts/opsearch.sh
 bind \en 'glow ~/notes/'
 
 zoxide init fish | source
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
