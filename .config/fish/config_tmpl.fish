@@ -21,6 +21,7 @@
 # set -x NODE_EXTRA_CA_CERTS /Users/taradruffel/Developer/java/phoenix-api/optadata-gruppe-ODA-DC1-CA.crt
 
 #aliases
+alias vimdiff='nvim -d'
 alias ls="eza -al --git-repos"
 alias cat='bat'
 alias n='nvim'

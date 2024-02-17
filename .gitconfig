@@ -1,0 +1,12 @@
+[user]
+	email = taradruffel@outlook.com
+	name = Askath
+
+[mergetool "nvimdiff"]
+  layout = "LOCAL,BASE,REMOTE / MERGED"
+  prompt =  false
+	keepBackup = false
+[merge]
+	tool = nvimdiff
+[commit]
+	template = /Users/taradruffel/.gitmessage
