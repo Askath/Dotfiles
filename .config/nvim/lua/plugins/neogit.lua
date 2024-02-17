@@ -1,6 +1,10 @@
 return {
     {
         "tpope/vim-fugitive",
+        config = {
+            syntaxfoldmethod = syntax,
+        },
+
         keys = {
             {
                 "<leader>gs",

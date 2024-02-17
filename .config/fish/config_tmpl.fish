@@ -37,6 +37,8 @@ alias rest="timer 10m && terminal-notifier -message 'Pomodoro'\
         -appIcon '~/Pictures/pumpkin.png'\
         -sound Crystal"
 
+alias chromedebug='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222'
+
 set PATH /Users/taradruffel/scripts $PATH
 
 set -g fish_escape_delay_ms 10
