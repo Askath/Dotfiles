@@ -1,4 +1,4 @@
-brew install fish fzf bat eza fd rigprep lazydocker node zoxide tmux glow gh jq lnav neovim openjdk@21 tig 1password-cli
+brew install fish fzf bat eza fd ripgrep lazydocker node zoxide tmux glow gh jq lnav neovim openjdk@21 tig 1password-cli
 brew install --cask amethyst
 brew install --cask google-chrome
 brew install caarlos0/tap/timer
