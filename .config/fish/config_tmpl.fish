@@ -55,6 +55,7 @@ set -x LLVM_PATH /opt/homebrew/opt/llvm/bin
 #paths
 set PATH /Users/taradruffel/scripts $PATH
 set PATH /Users/taradruffel/nvim/bin $PATH
+set PATH /Users/taradruffel/go/bin $PATH
 set PATH /Users/taradruffel/.cargo/bin $PATH
 set PATH /Users/tarardruffel/.tmux/plugins/t-smart-tmux-session-manager/bin $PATH
 set PATH /opt/homebrew/opt/openjdk@17/bin $PATH
