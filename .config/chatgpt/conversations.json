@@ -1,0 +1,25 @@
+{
+  "conversations": [
+    {
+      "config": {
+        "prompt": "default",
+        "context_length": 6,
+        "model": "gpt-3.5-turbo",
+        "stream": true,
+        "temperature": 1,
+        "max_tokens": 1024
+      },
+      "context": [
+        {
+          "question": ":q",
+          "answer": "I'm here to help! What can I assist you with today?"
+        },
+        {
+          "question": "I am currently in a weightloss phase, when would you recommend me to take creatine supplements?",
+          "answer": "It is generally recommended to take creatine supplements during a maintenance or muscle-building phase rather than during a weight loss phase, as creatine can sometimes lead to water retention and slight weight gain as it helps muscles retain water. If you still choose to take creatine during your weight loss phase, ensure you stay well-hydrated and monitor how your body responds to it."
+        }
+      ]
+    }
+  ],
+  "last_idx": 0
+}
