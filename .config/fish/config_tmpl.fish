@@ -42,6 +42,7 @@ alias rest="timer 10m && terminal-notifier -message 'Pomodoro'\
         -appIcon '~/Pictures/pumpkin.png'\
         -sound Crystal"
 
+alias cgpt='Users/taradruffel/Library/Python/3.9/bin/gpt'
 
 #variables
 set -x EDITOR nvim
@@ -53,6 +54,8 @@ set -x OPENAI_API_KEY "op://Private/OpenAPI nvim/credential"
 set -x LLVM_PATH /opt/homebrew/opt/llvm/bin
 
 #paths
+
+set PATH Users/taradruffel/Library/Python/3.9/bin $PATH
 set PATH /Users/taradruffel/scripts $PATH
 set PATH /Users/taradruffel/nvim/bin $PATH
 set PATH /Users/taradruffel/go/bin $PATH

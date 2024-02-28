@@ -3,76 +3,47 @@ return {
     version = "*", -- recommended, use latest release instead of latest commit
     lazy = true,
     ft = "markdown",
-    -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
-    -- event = {
-    --   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
-    --   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
-    --   "BufReadPre path/to/my-vault/**.md",
-    --   "BufNewFile path/to/my-vault/**.md",
-    -- },
     dependencies = {
         -- Required.
         "nvim-lua/plenary.nvim",
-
-        -- see below for full list of optional dependencies 👇
     },
     opts = {
+        -- A list of workspace names, paths, and configuration overrides.
+        -- If you use the Obsidian app, the 'path' of a workspace should generally be
+        -- your vault root (where the `.obsidian` folder is located).
+        -- When obsidian.nvim is loaded by your plugin manager, it will automatically set
+        -- the workspace to the first workspace in the list whose `path` is a parent of the
+        -- current markdown file being edited.
         workspaces = {
             {
                 name = "personal",
-                path = "~/notes/",
+                path = "~/notes",
             },
         },
 
-        -- Alternatively - and for backwards compatibility - you can set 'dir' to a single path instead of
-        -- 'workspaces'. For example:
-        -- dir = "~/vaults/work",
-
-        -- Optional, if you keep notes in a specific subdirectory of your vault.
-        notes_subdir = "notes",
+        -- dir = "~/notes",
 
         -- Optional, set the log level for obsidian.nvim. This is an integer corresponding to one of the log
         -- levels defined by "vim.log.levels.*".
         log_level = vim.log.levels.INFO,
 
-        daily_notes = {
-            -- Optional, if you keep daily notes in a separate directory.
-            folder = "notes/dailies",
-            -- Optional, if you want to change the date format for the ID of daily notes.
-            date_format = "%Y-%m-%d",
-            -- Optional, if you want to change the date format of the default alias of daily notes.
-            alias_format = "%B %-d, %Y",
-            -- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
-            template = nil,
-        },
+        -- daily_notes = {
+        --     -- Optional, if you keep daily notes in a separate directory.
+        --     folder = "notes/dailies",
+        --     -- Optional, if you want to change the date format for the ID of daily notes.
+        --     date_format = "%Y-%m-%d",
+        --     -- Optional, if you want to change the date format of the default alias of daily notes.
+        --     alias_format = "%B %-d, %Y",
+        --     -- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
+        --     template = nil,
+        -- },
 
         -- Optional, completion of wiki links, local markdown links, and tags using nvim-cmp.
         completion = {
             -- Set to false to disable completion.
             nvim_cmp = true,
-
             -- Trigger completion at 2 chars.
             min_chars = 2,
-
-            -- Where to put new notes created from completion. Valid options are
-            --  * "current_dir" - put new notes in same directory as the current buffer.
-            --  * "notes_subdir" - put new notes in the default notes subdirectory.
-            new_notes_location = "current_dir",
-
-            -- Control how wiki links are completed with these (mutually exclusive) options:
-            --
-            -- 1. Whether to add the note ID during completion.
-            -- E.g. "[[Foo" completes to "[[foo|Foo]]" assuming "foo" is the ID of the note.
-            -- Mutually exclusive with 'prepend_note_path' and 'use_path_only'.
-            prepend_note_id = true,
-            -- 2. Whether to add the note path during completion.
-            -- E.g. "[[Foo" completes to "[[notes/foo|Foo]]" assuming "notes/foo.md" is the path of the note.
-            -- Mutually exclusive with 'prepend_note_id' and 'use_path_only'.
-            prepend_note_path = false,
-            -- 3. Whether to only use paths during completion.
-            -- E.g. "[[Foo" completes to "[[notes/foo]]" assuming "notes/foo.md" is the path of the note.
-            -- Mutually exclusive with 'prepend_note_id' and 'prepend_note_path'.
-            use_path_only = false,
         },
 
         -- Optional, configure key mappings. These are the defaults. If you don't want to set any keymappings this
@@ -94,6 +65,11 @@ return {
             },
         },
 
+        -- Where to put new notes. Valid options are
+        --  * "current_dir" - put new notes in same directory as the current buffer.
+        --  * "notes_subdir" - put new notes in the default notes subdirectory.
+        new_notes_location = "notes_subdir",
+
         -- Optional, customize how names/IDs for new notes are created.
         note_id_func = function(title)
             -- Create note IDs in a Zettelkasten format with a timestamp and a suffix.
@@ -112,7 +88,31 @@ return {
             return tostring(os.time()) .. "-" .. suffix
         end,
 
+        -- Optional, customize how wiki links are formatted.
+        ---@param opts {path: string, label: string, id: string|?}
+        ---@return string
+        wiki_link_func = function(opts)
+            if opts.id == nil then
+                return string.format("[[%s]]", opts.label)
+            elseif opts.label ~= opts.id then
+                return string.format("[[%s|%s]]", opts.id, opts.label)
+            else
+                return string.format("[[%s]]", opts.id)
+            end
+        end,
+
+        -- Optional, customize how markdown links are formatted.
+        ---@param opts {path: string, label: string, id: string|?}
+        ---@return string
+        markdown_link_func = function(opts)
+            return string.format("[%s](%s)", opts.label, opts.path)
+        end,
+
+        -- Either 'wiki' or 'markdown'.
+        preferred_link_style = "wiki",
+
         -- Optional, customize the default name or prefix when pasting images via `:ObsidianPasteImg`.
+        ---@return string
         image_name_func = function()
             -- Prefix image names with timestamp.
             return string.format("%s-", os.time())
@@ -123,10 +123,16 @@ return {
         disable_frontmatter = false,
 
         -- Optional, alternatively you can customize the frontmatter data.
+        ---@return table
         note_frontmatter_func = function(note)
-            -- This is equivalent to the default frontmatter function.
+            -- Add the title of the note as an alias.
+            if note.title then
+                note:add_alias(note.title)
+            end
+
             local out =
                 { id = note.id, aliases = note.aliases, tags = note.tags }
+
             -- `note.metadata` contains any manually added fields in the frontmatter.
             -- So here we just make sure those fields are kept in the frontmatter.
             if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
@@ -134,6 +140,7 @@ return {
                     out[k] = v
                 end
             end
+
             return out
         end,
 
@@ -146,24 +153,9 @@ return {
             substitutions = {},
         },
 
-        -- Optional, customize the backlinks interface.
-        backlinks = {
-            -- The default height of the backlinks location list.
-            height = 10,
-            -- Whether or not to wrap lines.
-            wrap = true,
-        },
-
-        -- Optional, customize the tags interface.
-        tags = {
-            -- The default height of the tags location list.
-            height = 10,
-            -- Whether or not to wrap lines.
-            wrap = true,
-        },
-
         -- Optional, by default when you use `:ObsidianFollowLink` on a link to an external
         -- URL it will be ignored but you can customize this behavior here.
+        ---@param url string
         follow_url_func = function(url)
             -- Open the URL in the default web browser.
             vim.fn.jobstart({ "open", url }) -- Mac OS
@@ -177,18 +169,17 @@ return {
         -- Optional, set to true to force ':ObsidianOpen' to bring the app to the foreground.
         open_app_foreground = false,
 
-        -- Optional, by default commands like `:ObsidianSearch` will attempt to use
-        -- telescope.nvim, fzf-lua, fzf.vim, or mini.pick (in that order), and use the
-        -- first one they find. You can set this option to tell obsidian.nvim to always use this
-        -- finder.
-        finder = "telescope.nvim",
-
-        -- Optional, configure key mappings for the finder. These are the defaults.
-        -- If you don't want to set any mappings this way then set
-        finder_mappings = {
-            -- Create a new note from your query with `:ObsidianSearch` and `:ObsidianQuickSwitch`.
-            -- Currently only telescope supports this.
-            new = "<C-x>",
+        picker = {
+            -- Set your preferred picker. Can be one of 'telescope.nvim', 'fzf-lua', or 'mini.pick'.
+            name = "telescope.nvim",
+            -- Optional, configure key mappings for the picker. These are the defaults.
+            -- Not all pickers support all mappings.
+            mappings = {
+                -- Create a new note from your query.
+                new = "<C-x>",
+                -- Insert a link to the selected note.
+                insert_link = "<C-l>",
+            },
         },
 
         -- Optional, sort search results by "path", "modified", "accessed", or "created".
