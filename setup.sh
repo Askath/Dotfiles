@@ -6,3 +6,4 @@ brew install terminal-notifier #seems to be a dead project
 brew install xo/xo/usql
 brew install httpie
 brew install joshmedeski/sesh/sesh
+brew install j178/tap/chatgpt
