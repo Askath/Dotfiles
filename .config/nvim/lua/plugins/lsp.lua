@@ -15,6 +15,10 @@ return {
         opts = {
             inline_hints = { enabled = true },
             servers = {
+                html = {
+                    filetypes = { "html", "heex", "eex" },
+                },
+
                 jdtls = {
                     cmd = {
                         "jdtls",
