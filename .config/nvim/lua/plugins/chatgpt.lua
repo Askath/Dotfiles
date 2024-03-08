@@ -156,7 +156,7 @@ return {
                     frequency_penalty = 0,
                     presence_penalty = 0,
                     temperature = 0,
-                    max_tokens = 4000,
+                    max_tokens = 3000,
                     top_p = 1,
                     n = 1,
                 },
