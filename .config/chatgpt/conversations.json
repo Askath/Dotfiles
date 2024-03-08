@@ -9,7 +9,7 @@
         "temperature": 1,
         "max_tokens": 1024
       },
-      "context": [
+      "forgotten": [
         {
           "question": ":q",
           "answer": "I'm here to help! What can I assist you with today?"
@@ -17,6 +17,52 @@
         {
           "question": "I am currently in a weightloss phase, when would you recommend me to take creatine supplements?",
           "answer": "It is generally recommended to take creatine supplements during a maintenance or muscle-building phase rather than during a weight loss phase, as creatine can sometimes lead to water retention and slight weight gain as it helps muscles retain water. If you still choose to take creatine during your weight loss phase, ensure you stay well-hydrated and monitor how your body responds to it."
+        },
+        {
+          "question": "how do i use the one password cli to generate a passwort",
+          "answer": "To generate a password using the 1Password command-line interface (CLI), you can use the following command:\n\n```\nop generate password\n```\n\nYou can add options to customize the generated password, such as length, the number of digits or symbols, and even avoid ambiguous characters. Review the CLI documentation for specific details on additional options and parameters."
+        },
+        {
+          "question": ":q",
+          "answer": "If you have any more questions in the future, feel free to ask. Have a great day!"
+        },
+        {
+          "question": "that does not work",
+          "answer": "I apologize for any confusion. To generate a password using the 1Password command-line interface (CLI), you can use the following command format:\n\n```bash\nop generate password [--length \u003clength\u003e] [--uppercase] [--lowercase] [--digits] [--symbols] [--avoid \u003ccharacters\u003e]\n```\n\nReplace `\u003clength\u003e` with the desired length of the password and adjust other options as needed. Make sure to have the 1Password CLI tool installed and configured on your system before using this command."
+        },
+        {
+          "question": "command not found",
+          "answer": "To use the 1Password CLI to generate a password, you can use the following command:\n\n```\nop rand -m \u003clength\u003e\n```\n\nReplace `\u003clength\u003e` with the desired length of the password you want to generate. This command should work if you have the 1Password CLI tool installed and configured correctly on your system."
+        },
+        {
+          "question": "ich benutze GFOS auf der Arbeit fur die Zeiterfassung. dort steht unter manueller Zeiterfassung vor meinen Eintraegen LES und SPL",
+          "answer": "In GFOS, \"LES\" typically stands for \"Leistungsende\" (end of service) and \"SPL\" stands for \"Spezialzeit\" (special time). These codes are often used in time tracking systems to categorize different types of work or time entries for reporting and tracking purposes."
+        }
+      ],
+      "context": [
+        {
+          "question": "okay what is the difference between those",
+          "answer": "In GFOS, \"LES\" (Leistungsende) typically refers to the end time of a service or task. It marks the completion time of regular work or service.\n\n\"SPL\" (Spezialzeit), on the other hand, usually denotes special time entries that don't fall into the regular work category. This could include breaks, overtime, special projects, or any other non-standard time entries that require tracking separately from regular working hours."
+        },
+        {
+          "question": "TypKommenGehenZeitTagBSLBez.Para.MandantOrgEAbt.Kst.",
+          "answer": "In this context:\n- Typ: Type\n- KommenGehenZeit: Time of arrival and departure\n- Tag: Day\n- BSL: Not specified\n- Bez.: Description\n- Para.: Parameter\n- Mandant: Client\n- Org: Organization\n- EAbt.: Department\n- Kst.: Cost center"
+        },
+        {
+          "question": "Typ    Kommen    Gehen    Zeit    Tag    BSL    Bez.    Para.    Mandant    OrgE    Abt.    Kst.",
+          "answer": "In this context:\n- Typ: Type\n- Kommen: Arrival time\n- Gehen: Departure time\n- Zeit: Time\n- Tag: Day\n- BSL: Not specified\n- Bez.: Description\n- Para.: Parameters\n- Mandant: Client\n- OrgE: Organization\n- Abt.: Department\n- Kst.: Cost center"
+        },
+        {
+          "question": "LES    07:52    10:39",
+          "answer": "In this context:\n- LES: Leistungsende (End of service)\n- 07:52: Arrival time\n- 10:39: Departure time\n\nThese entries likely represent the start and end times of a service or task in the time tracking system."
+        },
+        {
+          "question": "SPL    07:52    10:39    02:47",
+          "answer": "In this context:\n- SPL: Spezialzeit (Special time)\n- 07:52: Arrival time\n- 10:39: Departure time\n- 02:47: Duration\n\nThis entry indicates a special time period that started at 07:52, ended at 10:39, with a total duration of 02:47 (2 hours and 47 minutes)."
+        },
+        {
+          "question": "those are entries from the same day",
+          "answer": "Understood. The entries \"LES 07:52 10:39\" and \"SPL 07:52 10:39 02:47\" occurring on the same day likely show two different types of activities. \"LES\" may represent regular work from 07:52 to 10:39, while \"SPL\" could denote a special task or break taken during the same time frame, lasting for 2 hours and 47 minutes."
         }
       ]
     }

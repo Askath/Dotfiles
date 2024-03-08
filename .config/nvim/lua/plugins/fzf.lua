@@ -40,6 +40,16 @@ return {
                 "<cmd>FzfLua grep<cr>",
                 desc = "Grep",
             },
+            {
+                "<leader>sw",
+                "<cmd>FzfLua grep_cword<cr>",
+                desc = "Grep under cursor",
+            },
+            {
+                "<leader>Mm",
+                "<cmd>FzfLua marks<cr>",
+                desc = "List marks",
+            },
         },
     },
 }
