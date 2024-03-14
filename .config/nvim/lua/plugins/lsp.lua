@@ -18,6 +18,10 @@ return {
                 html = {
                     filetypes = { "html", "heex", "eex" },
                 },
+                gleam = {
+
+                    filetypes = { "gleam" },
+                },
 
                 jdtls = {
                     cmd = {
@@ -31,16 +35,6 @@ return {
                             ),
                     },
                     filetypes = { "java" },
-                },
-                elixirls = {
-                    dialyzerEnabled = true,
-                    autoBuild = true,
-                    cmd = { "elixir-ls" },
-                    filetypes = { "elixir", "eelixir", "exs", "ex" },
-                    root_dir = require("lspconfig.util").root_pattern(
-                        "mix.exs",
-                        ".git"
-                    ),
                 },
                 gdscript = {
                     file_types = { "gd", "gdscript" },
@@ -115,22 +109,13 @@ return {
             local elixirls = require("elixir.elixirls")
 
             elixir.setup({
-                nextls = {
-                    enable = true, -- defaults to false
-                },
-                credo = {
-                    enable = true, -- defaults to true
-                },
+                nextls = { enable = true },
+                credo = {},
                 elixirls = {
-                    -- specify a repository and branch
-                    -- repo = "mhanberg/elixir-ls", -- defaults to elixir-lsp/elixir-ls
-
-                    -- default settings, use the `settings` function to override settings
+                    enable = true,
                     settings = elixirls.settings({
                         dialyzerEnabled = true,
-                        fetchDeps = false,
                         enableTestLenses = false,
-                        suggestSpecs = false,
                     }),
                     on_attach = function(client, bufnr)
                         vim.keymap.set(
@@ -158,5 +143,8 @@ return {
         dependencies = {
             "nvim-lua/plenary.nvim",
         },
+    },
+    {
+        "gleam-lang/gleam.vim",
     },
 }

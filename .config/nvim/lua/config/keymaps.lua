@@ -22,3 +22,12 @@ vim.keymap.set("n", "<leader>tc", "<cmd>TabnineChatClose<cr>")
 vim.keymap.set("n", "<leader>te", "<cmd>TabnineExplain<cr>")
 vim.keymap.set("n", "<leader>tf", "<cmd>TabnineFix<cr>")
 vim.keymap.set("n", "<leader>tt", "<cmd>TabnineTest<cr>")
+
+vim.keymap.set(
+    "n",
+    "<leader>sp",
+    '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>',
+    {
+        desc = "Search on current file",
+    }
+)
