@@ -3,3 +3,5 @@
 -- Add any additional options here
 --
 vim.opt.conceallevel = 2
+vim.opt.list = true
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
