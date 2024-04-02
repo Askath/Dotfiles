@@ -1,6 +1,6 @@
 [user]
 	email = taradruffel@outlook.com
-	name = Askath
+	name = "Tara Druffel" 
 
 [mergetool "nvimdiff"]
   layout = "LOCAL,BASE,REMOTE / MERGED"
