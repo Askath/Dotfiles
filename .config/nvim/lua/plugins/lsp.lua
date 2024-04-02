@@ -1,6 +1,4 @@
 return {
-
-    "NeogitOrg/neogit",
     {
         "williamboman/mason-lspconfig.nvim",
         opts = {

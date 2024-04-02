@@ -21,7 +21,7 @@ return {
             },
 
             {
-                "<leader>f",
+                "<leader>ff",
                 "<cmd>FzfLua files<cr>",
                 desc = "Find all files",
             },
