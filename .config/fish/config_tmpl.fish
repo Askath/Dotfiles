@@ -64,10 +64,11 @@ set PATH /Users/tarardruffel/.tmux/plugins/t-smart-tmux-session-manager/bin $PAT
 set PATH /opt/homebrew/opt/openjdk@17/bin $PATH
 
 #my Tools
-bind \et 'sesh connect $(sesh list | fzf)'
-bind \ef rgf
-bind \ep ~/scripts/opsearch.sh
-bind \en 'glow ~/notes/'
-bind \eh cgpt
+bind \ess 'sesh connect $(sesh list | fzf)' #(s)earch (session
+bind \esf rgf #(s)earch (p)file
+bind \ep ~/scripts/opsearch.sh #(s)earch (p)asswords
+bind \esn 'glow ~/notes/' #(s)earch (n)otes
+bind \eh cgpt #(h)elp
+bind \ee nn #(e)xplorer
 
 zoxide init fish | source
