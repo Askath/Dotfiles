@@ -42,7 +42,6 @@ alias rest="timer 10m && terminal-notifier -message 'Pomodoro'\
         -appIcon '~/Pictures/pumpkin.png'\
         -sound Crystal"
 
-alias cgpt='chatgpt'
 
 #variables
 set -x EDITOR nvim
@@ -68,7 +67,6 @@ bind \ess 'sesh connect $(sesh list | fzf)' #(s)earch (session
 bind \esf rgf #(s)earch (p)file
 bind \ep ~/scripts/opsearch.sh #(s)earch (p)asswords
 bind \esn 'glow ~/notes/' #(s)earch (n)otes
-bind \eh cgpt #(h)elp
 bind \ee nn #(e)xplorer
 
 zoxide init fish | source

@@ -29,3 +29,5 @@ brew install httpie
 brew install joshmedeski/sesh/sesh
 brew install j178/tap/chatgpt
 brew install firefox
+brew install ansible
+brew install ansible-lint
