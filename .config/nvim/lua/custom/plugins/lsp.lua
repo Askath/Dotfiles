@@ -20,7 +20,11 @@ return { -- LSP Configuration & Plugins
           map('gd', "<CMD>lua require('fzf-lua').lsp_definitions({ jump_to_single_result = true })<cr>", 'Jump to Definiton')
           map('gr', '<CMD>FzfLua lsp_references<cr>', 'Jump to Definiton')
           map('cs', '<CMD>FzfLua lsp_document_symbols<cr>', 'Show Symbols')
+          map('cR',function() 
+            vim.lsp.buf.execute_command({command = "_typescript.organizeImports", arguments = {vim.fn.expand("%:p")}}) 
+          end , 'organize Imports')
           map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+
 
           map('K', vim.lsp.buf.hover, 'Hover Documentation')
           vim.lsp.inlay_hint.enable(bufnr, true)
@@ -49,6 +53,28 @@ return { -- LSP Configuration & Plugins
 
       local servers = {
 
+        prettier = {
+          cli_options = {
+            arrow_parens = "always",
+            bracket_spacing = true,
+            bracket_same_line = false,
+            embedded_language_formatting = "auto",
+            end_of_line = "lf",
+            html_whitespace_sensitivity = "css",
+            -- jsx_bracket_same_line = false,
+            jsx_single_quote = false,
+            print_width = 150,
+            prose_wrap = "preserve",
+            quote_props = "as-needed",
+            semi = true,
+            single_attribute_per_line = false,
+            single_quote = false,
+            tab_width = 2,
+            trailing_comma = "es5",
+            use_tabs = false,
+            vue_indent_script_and_style = false,
+          },
+        },
         tsserver = {
           autostart = true,
           init_options = {
@@ -62,6 +88,25 @@ return { -- LSP Configuration & Plugins
               includeInlayEnumMemberValueHints = true,
               importModuleSpecifierPreference = 'non-relative',
             },
+          },
+        },
+        eslint = {
+          bin = 'eslint', -- or `eslint_d`
+          code_actions = {
+            enable = true,
+            apply_on_save = {
+              enable = true,
+              types = { 'directive', 'problem', 'suggestion', 'layout' },
+            },
+            disable_rule_comment = {
+              enable = true,
+              location = 'separate_line', -- or `same_line`
+            },
+          },
+          diagnostics = {
+            enable = true,
+            report_unused_disable_directives = false,
+            run_on = 'type', -- or `save`
           },
         },
         angularls = {
