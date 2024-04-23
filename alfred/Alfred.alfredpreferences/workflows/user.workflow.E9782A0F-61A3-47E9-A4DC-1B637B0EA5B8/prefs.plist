@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>chatgpt_keyword</key>
+	<string>gpt</string>
+	<key>gpt_model</key>
+	<string>gpt-4</string>
+	<key>openai_api_key</key>
+	<string>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</string>
+</dict>
+</plist>
