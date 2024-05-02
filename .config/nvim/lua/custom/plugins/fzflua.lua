@@ -57,6 +57,11 @@ return {
       '<cmd>FzfLua keymaps<cr>',
       desc = 'Search Keymaps',
     },
+    {
+      '<leader>sm',
+      '<cmd>FzfLua marks<cr>',
+      desc = 'Search marks',
+    },
   },
   },
 }
