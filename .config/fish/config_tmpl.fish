@@ -40,6 +40,7 @@ set -x JAVA_HOME /opt/homebrew/opt/openjdk@17
 set -x USERNAME taradruffel
 set -x OPENAI_API_KEY "op://Private/OpenAPI nvim/credential"
 set -x LLVM_PATH /opt/homebrew/opt/llvm/bin
+set -x DIGITALOCEAN_TOKEN "op://Private/digitalocean/credential"
 
 #paths
 
