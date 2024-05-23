@@ -14,7 +14,7 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower win
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 vim.keymap.set('n', '<leader>qq', '<cmd>q!<cr>')
+vim.keymap.set('n', '<leader>C', '<cmd>CopilotChat<cr>')
+vim.keymap.set('n', '<leader>|', '<cmd>vsplit<cr>')
 
-vim.keymap.set('n', '<leader>uI', function()
-    vim.lsp.inlay_hint.enable(nil, not vim.lsp.inlay_hint.is_enabled())
-end,  { desc = "toggle inline hints"})
+

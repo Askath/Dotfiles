@@ -27,7 +27,9 @@ return { -- LSP Configuration & Plugins
 
 
           map('K', vim.lsp.buf.hover, 'Hover Documentation')
-          vim.lsp.inlay_hint.enable(bufnr, true)
+          vim.lsp.inlay_hint.enable(true)
+
+
 
           local client = vim.lsp.get_client_by_id(event.data.client_id)
           if client and client.server_capabilities.documentHighlightProvider then

@@ -1,12 +1,18 @@
 [user]
 	email = taradruffel@outlook.com
 	name = "Tara Druffel" 
-
-[mergetool "nvimdiff"]
-  layout = "LOCAL,BASE,REMOTE / MERGED"
-  prompt =  false
-	keepBackup = false
-[merge]
-	tool = nvimdiff
 [commit]
 	template = /Users/taradruffel/.gitmessage
+	gpgsign = false
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[diff]
+	tool = bc3
+[difftool]
+	bc3 = trustExitCode
+	bc3 = trustExitCode
+[merge]
+	tool = bc3
+[mergetool]
+	bc3 = trustExitCode
+	bc3 = trustExitCode

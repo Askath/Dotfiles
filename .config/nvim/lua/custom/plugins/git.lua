@@ -23,6 +23,5 @@ return {
             },
         },
         config = true,
-        branch = "nightly",
     },
 }
