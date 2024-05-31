@@ -1,0 +1,72 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+let mapleader = " "
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+set scrolloff=10
+set linenumber
+set showmode
+set showcmd
+set visualbell
+set clipboard+=unnamed
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+set relativenumber
+set which-key
+set notimeout
+
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+" Pane navigation
+nnoremap <c-h> <C-w>h
+nnoremap <c-l> <C-w>l
+nnoremap <c-k> <C-w>k
+nnoremap <c-j> <C-w>j
+nnoremap <leader>\ :vsplit<CR>
+" Comment lines
+map <leader>c <action>(CommentByLineComment)
+" File navigation
+map <leader>ff <action>(GotoFile)
+map <leader>fr <action>(RecentFiles)
+map <leader>fc <action>(FindInPath)
+map <leader><leader> <Action>(RecentFiles)
+map <leader>fl <action>(RecentLocations)
+map <leader>fs <action>(NewScratchFile)
+" Actions
+map <leader>ca <action>(ShowIntentionActions)
+map <leader>sa <action>(SearchEverywhere)
+" Go to code
+nmap <leader>gy <Action>(GotoTypeDeclaration)
+nmap <leader>gi <Action>(GotoImplementation)
+nmap gd <Action>(GotoDeclaration)
+nmap gr <Action>(ShowUsages)
+nmap <leader>gt <Action>(GotoTest)
+nmap <leader>gf <Action>(Back)
+nmap <leader>gb <Action>(Forward)
+nmap <leader>C <Action>(copilot.chat.show)
+nmap <leader>T <Action>(ActivateTerminalToolWindow)
+nmap <c-c> <Action>(HideActiveWindow)
+nmap <leader>ss <Action>(FileStructurePopup)
+nmap <leader>xx <Action>(ActivateProblemsViewToolWindow)
+nmap <leader>e <Action>(ActivateProjectToolWindow)
+nnoremap <Esc> :nohlsearch<CR><Esc>
+ActivateProjectToolWindow
