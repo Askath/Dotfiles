@@ -1,0 +1,33 @@
+#+title: Config
+#+property: header-args :tangle config.fish
+
+* Table of Contents :toc:
+- [[#aliases][Aliases]]
+- [[#variables][Variables]]
+- [[#path][PATH]]
+- [[#inits][inits]]
+
+* Aliases
+#+begin_src shell
+alias ls="eza -al --git-repos"
+alias cat='bat'
+#+end_src
+
+* Variables
+#+begin_src shell
+set -x EDITOR "emacsclient -c"
+set -g fish_escape_delay_ms 10
+set -x LLVM_PATH /opt/homebrew/opt/llvm/bin
+#+end_src
+
+* PATH
+#+begin_src shell
+set -x PATH ~/.emacs.d/bin $PATH
+set -x PATH /opt/homebrew/bin $PATH
+set -x PATH /opt/homebrew/opt/grep/libexec/gnubin $PATH
+#+end_src
+
+* inits
+#+begin_src shell
+zoxide init fish | source
+#+end_src
