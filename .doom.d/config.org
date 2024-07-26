@@ -1,11 +1,39 @@
-(setq doom-font (font-spec :family "Monaspace Neon Var" :size 16))
+* Table of Contents :toc:
+- [[#theme][Theme]]
+  - [[#font][Font]]
+  - [[#style][Style]]
+- [[#org-mode][Org-Mode]]
+- [[#lsp-settings][LSP Settings]]
+  - [[#java-support-lombok][Java Support (Lombok)]]
+  - [[#gleam-support][Gleam Support]]
+  - [[#angular-support][Angular Support]]
+- [[#keymaps][Keymaps]]
+  - [[#diagnostics][Diagnostics]]
+- [[#fish-config][Fish Config]]
+- [[#copilot][Copilot]]
 
+* Theme
+** Font
+#+begin_src elisp
+(setq doom-font (font-spec :family "Monaspace Neon Var" :size 16))
+#+end_src
+** Style
+#+begin_src elisp
 (setq doom-theme 'doom-feather-light)
 (setq display-line-numbers-type 'relative)
 (setq fancy-splash-image "~/.doom.d/dashboard.png")
 
-(setq org-directory "~/org/")
+#+end_src
 
+* Org-Mode
+#+begin_src elisp
+(setq org-directory "~/org/")
+#+end_src
+
+
+* LSP Settings
+** Java Support (Lombok)
+#+begin_src elisp
 (after! lsp-java
 
   (setq lombok-library-path (concat doom-data-dir "lombok.jar"))
@@ -20,10 +48,15 @@
         lsp-java-vmargs)
   )
 
+#+end_src
+** Gleam Support
+#+begin_src elisp
 (require 'lsp-mode)
 (add-hook 'gleam-ts-mode-hook #'lsp)
 (add-to-list 'auto-mode-alist '("\\.gleam\\'" . gleam-ts-mode))
-
+#+end_src
+** Angular Support
+#+begin_src elisp
 (setq lsp-clients-angular-language-server-command
       '("node"
         "/opt/homebrew/lib/node_modules/@angular/language-server"
@@ -32,7 +65,11 @@
         "--tsProbeLocations"
         "/opt/homebrew/lib/node_modules"
         "--stdio"))
+#+end_src
 
+* Keymaps
+** Diagnostics
+#+begin_src elisp
 (map! :n "]d" #'flycheck-next-error)
 (map! :n "[d" #'flycheck-previous-error)
 
@@ -46,10 +83,17 @@
       (with-current-buffer (find-file file-path)
         (lsp)))))
 
+#+end_src
+
+* Fish Config
+#+begin_src elisp
 (setq shell-file-name (executable-find "bash"))
 (setq-default vterm-shell (executable-find "fish"))
 (setq-default explicit-shell-file-name (executable-find "fish"))
+#+end_src
 
+* Copilot
+#+begin_src elisp
 (use-package! copilot
   :hook (prog-mode . copilot-mode)
   :bind (:map copilot-completion-map
@@ -62,3 +106,4 @@
   (setq! gptel-api-key "")
   (setq! gptel-model "gpt-4o"))
 (setq! copilot-idle-delay 0.5)
+#+end_src

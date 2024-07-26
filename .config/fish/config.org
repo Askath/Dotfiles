@@ -11,13 +11,22 @@
 #+begin_src shell
 alias ls="eza -al --git-repos"
 alias cat='bat'
+alias ec='emacsclient -c'
 #+end_src
 
 * Variables
+"Editor": Standard editor to edit files
+"fish_escape_delay_ms": no idea
+"LLVM_PATH": Needed for homebrew
+"NODE_EXTRA_CA_CERTS": company certs for nexus and archiva
+
 #+begin_src shell
 set -x EDITOR "emacsclient -c"
 set -g fish_escape_delay_ms 10
 set -x LLVM_PATH /opt/homebrew/opt/llvm/bin
+set -x NODE_EXTRA_CA_CERTS "/Users/taradruffel/.workspace/repos/phoenix-core/optadata-gruppe-ODA-DC1-CA.crt"
+set -x JAVA_HOME /opt/homebrew/opt/openjdk/
+set -x USERNAME taradruffel
 #+end_src
 
 * PATH
@@ -25,6 +34,7 @@ set -x LLVM_PATH /opt/homebrew/opt/llvm/bin
 set -x PATH ~/.emacs.d/bin $PATH
 set -x PATH /opt/homebrew/bin $PATH
 set -x PATH /opt/homebrew/opt/grep/libexec/gnubin $PATH
+set -x PATH /opt/homebrew/opt/openjdk/bin $PATH
 #+end_src
 
 * inits

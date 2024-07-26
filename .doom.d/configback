@@ -1,0 +1,62 @@
+(setq doom-theme 'doom-one)
+
+(setq display-line-numbers-type 'relative)
+
+(setq org-directory "~/org/")
+
+
+(setq shell-file-name (executable-find "bash"))
+(setq-default vterm-shell (executable-find "fish"))
+(setq-default explicit-shell-file-name (executable-find "fish"))
+
+
+(setq doom-font (font-spec :family "Monaspace Neon Var" :size 16))
+
+(after! lsp-java
+
+  (setq lombok-library-path (concat doom-data-dir "lombok.jar"))
+
+  (unless (file-exists-p lombok-library-path)
+    (url-copy-file "https://projectlombok.org/downloads/lombok.jar" lombok-library-path))
+
+  (setq lsp-java-vmargs '("-XX:+UseParallelGC" "-XX:GCTimeRatio=4" "-XX:AdaptiveSizePolicyWeight=90" "-Dsun.zip.disableMemoryMapping=true" "-Xmx4G" "-Xms100m"))
+
+  (push (concat "-javaagent:"
+                  (expand-file-name lombok-library-path))
+          lsp-java-vmargs)
+)
+
+;; (after! projectile (setq projectile-project-root-files-bottom-up (remove ".git"
+;;           projectile-project-root-files-bottom-up)))
+
+(require 'lsp-mode)
+(add-hook 'gleam-ts-mode-hook #'lsp)
+(add-to-list 'auto-mode-alist '("\\.gleam\\'" . gleam-ts-mode))
+
+(setq lsp-clients-angular-language-server-command
+  '("node"
+    "/opt/homebrew/lib/node_modules/@angular/language-server"
+    "--ngProbeLocations"
+    "/opt/homebrew/lib/node_modules"
+    "--tsProbeLocations"
+    "/opt/homebrew/lib/node_modules"
+    "--stdio"))
+
+(prodigy-define-service
+  :name "Backend"
+  :command "mvn"
+  :args '("spring-boot:run")
+  :cwd "/Users/taradruffel/.workspace/repos/phoenix-core/modules/service/"
+  :tags '(work)
+  :stop-signal 'sigkill
+  :kill-process-buffer-on-stop t
+  )
+
+(prodigy-define-service
+  :name "Frontend"
+  :command "ng"
+  :args '("serve")
+  :cwd "/Users/taradruffel/.workspace/repos/phoenix-frontend"
+  :tags '(work)
+  :stop-signal 'sigkill
+  :kill-process-buffer-on-stop t)
