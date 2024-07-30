@@ -72,6 +72,7 @@
 #+begin_src elisp
 (map! :n "]d" #'flycheck-next-error)
 (map! :n "[d" #'flycheck-previous-error)
+(map! :leader "cX" #'list-flycheck-errors)
 
 (defun my/lsp-check-src-files ()
   "Open all files in the src directory and check for errors using LSP."
