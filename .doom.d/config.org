@@ -15,15 +15,18 @@
 * Theme
 ** Font
 #+begin_src elisp
-(setq doom-font (font-spec :family "Monaspace Neon Var" :size 16))
+        (setq doom-font (font-spec :family "Monaspace Neon Var" :size 16))
 #+end_src
 ** Style
 #+begin_src elisp
-(setq doom-theme 'doom-feather-light)
-(setq display-line-numbers-type 'relative)
-(setq fancy-splash-image "~/.doom.d/dashboard.png")
+        (setq doom-theme 'doom-ayu-dark)
+        (setq display-line-numbers-type 'relative)
+        (setq fancy-splash-image "~/.doom.d/dashboard.png")
 
 #+end_src
+
+#+RESULTS:
+: ~/.doom.d/dashboard.png
 
 * Org-Mode
 #+begin_src elisp
@@ -106,5 +109,5 @@
   :config
   (setq! gptel-api-key "")
   (setq! gptel-model "gpt-4o"))
-(setq! copilot-idle-delay 0.5)
+(setq! copilot-idle-delay 0.1)
 #+end_src

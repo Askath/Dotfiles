@@ -1,6 +1,6 @@
 (setq doom-font (font-spec :family "Monaspace Neon Var" :size 16))
 
-(setq doom-theme 'doom-feather-light)
+(setq doom-theme 'doom-ayu-dark)
 (setq display-line-numbers-type 'relative)
 (setq fancy-splash-image "~/.doom.d/dashboard.png")
 
@@ -35,6 +35,7 @@
 
 (map! :n "]d" #'flycheck-next-error)
 (map! :n "[d" #'flycheck-previous-error)
+(map! :leader "cX" #'list-flycheck-errors)
 
 (defun my/lsp-check-src-files ()
   "Open all files in the src directory and check for errors using LSP."
@@ -61,4 +62,4 @@
   :config
   (setq! gptel-api-key "")
   (setq! gptel-model "gpt-4o"))
-(setq! copilot-idle-delay 0.5)
+(setq! copilot-idle-delay 0.1)
